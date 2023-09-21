@@ -1,0 +1,18 @@
+Here is how to use the gig scheduler!
+
+To begin, there are four options, and to choose them you have to enter a number:
+
+	1) view the help menu
+		- this takes you to this page ;)
+	2) add a new gig
+		- in this portion, you will be asked for a lot of information about the gig you are wanting to create
+		- if you aren't going to sell tickets on a website, you do not have to include one
+		- make sure you input information in the requested formats
+		- if you enter a band to your gig that doesn't already exists in your table, you will have to enter the information for the new one
+			- the website link for the band is optional
+			- the image link for the band is optional
+	3) view the schedule
+		- you can enter a start date, end date, one, or neither and we will display to you all of the gigs within that time span
+		- again, be sure to input the information in the requested formats
+	4) quit the program
+		- this stops the program from running and displays a good by message

@@ -1,10 +1,6 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/IA6TemM5)
 # Gig Scheduler
 
-**Gig Scheduler** Below is some general background information  followed by directions.
-
-Part 1 is mostly focused on setting up the database and architecture.
-
 ## Introduction
 
 Welcome to the team! Kauffman Koncerts is the newest, hottest, hipster-est, and awesome-est concert venue in Lincoln (with possibly the worst name ever). Basically, a group of Raikes students has decided to use the Great Hall as a "underground" concert venue in the evenings. Of course, the group of students proceeded with this plan only after going through all the necessary approval processes defined by the University (_cough-cough_).

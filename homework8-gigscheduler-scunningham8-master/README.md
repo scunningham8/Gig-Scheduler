@@ -1,9 +1,9 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/IA6TemM5)
 # Gig Scheduler
 
-**Gig Scheduler is made up of two assignments, with two separate due dates.** Below is some general background information that applies to both assignments, followed by directions for both assignment 1 and assignment 2 (clearly marked). Both assignments will be committed to this repository.
+**Gig Scheduler** Below is some general background information  followed by directions.
 
-Assignment 1 will mostly be focused on setting up your database and architecture, and will serve as a checkpoint to allow you to get feedback from the teaching team before working on assignment 2.
+Part 1 is mostly focused on setting up the database and architecture.
 
 ## Introduction
 
@@ -52,10 +52,6 @@ The scheduling system requirements agreed upon by your team are as follows:
 14. The database should include foreign keys between the appropriate tables.
 15. The program should accept no command-line arguments on startup.
 
-## Gig Scheduler Assignment 1
-
-For assignment 1, your team (Val and the TAs) simply expects you to setup the database and create a few simple Java classes. They can then give you feedback on what to improve! This is very similar to industry, where you often begin by architecting a database (or system-wide) design before you begin development.
-
 **Step 1: Database Design:**
 
 1.  Sketch out your database design on paper.
@@ -99,47 +95,7 @@ Add the following classes:
     -   return a Band object.
 5.  Write thorough unit tests for `createBandFromInput()`.
 
-### Turning it in
-
-For assignment 1, you need to turn in two major components (in addition to your code):
-
-1.  The EER Diagram that describes your database. This should be in the top-level directory of your repository. If you had to modify your database during development for any reason, ensure that your EER diagram is up to date.
-2.  The SQL dump that creates and seeds your database. This should be in the top-level directory of your repository. If you had to modify your database during development for any reason, ensure that your SQL dump is up to date.
-
-### Gig Scheduler Assignment 1 Evaluation Criteria
-
-**Below is a list of criteria for which the assignment will be evaluated and feedback will be given, using the E/S/N/U system.** _The sub-bullet points are provided as examples of what to consider when completing this assignment and are not intended to be comprehensive._
-
--   **OOP Structure**
-    -   use of encapsulation & inheritance
-    -   functionality belongs to appropriate classes
--   **Database Design**
-    -   tables use correct data types
-    -   tables utilize primary/foreign key constraints
-    -   relationships modeled appropriately
--   **Meets spec**
-    -   SQL dump file included, named appropriately, and includes the required seeding elements.
-    -   EER diagram included and named appropriately.
-    -   Gig/Band info is formatted according to spec when outputted, and the user is prompted for a start/end date for filtering gigs by date.
-    -   Functionality for prompting the user to add new bands is completed according to spec.
-    -   Accessors include the ability to view all gigs, and includes the ability to filter these gigs between two dates/times.
-    -   Accessors include the ability to add a new gig and associated bands to the database.
--   **Code structure**
-    -   No code copied many times within a method, many times in a class, etc.
-    -   Code is structured in an easy-to-read way
--   **Testing**
-    -   Effective use of mocking
-    -   All tests run and pass
-    -   All assert statements have a unique "message" passed to them
--   **Software engineering principles**
-    -   No linter errors
-    -   Well-chosen variable and method names
-
-## Gig Scheduler Assignment 2
-
-With your database design approved by your (teaching) team, you can now get to work on making everything else required for a fully-functional Gig Scheduler (trademark pending)!
-
-**Step 1: Writing the Gig Scheduler & Unit Tests**
+**Step 5: Writing the Gig Scheduler & Unit Tests**
 
 Write your Gig Scheduler program using Java, SQL, and JDBC to meet the requirements and specifications listed above.
 
@@ -156,29 +112,28 @@ Write a function in GigScheduler that displays all Gigs. Users should be able to
 
 Implement any remaining features specified in the requirements (above) and connect their functions to the application loop.
 
-**Step 2: Writing a User Manual**
+**Step 6: Writing a User Manual**
 Write a brief user manual so other Kauffman Koncerts team members can operate your application. You DO NOT want to be the only one who knows how to use your system. Nobody's got time for that. Ensure that the user manual is included in the top-level directory of your git repository with the filename `USER_MANUAL`. This file can have extension: `.txt`, `.md`, `.pdf`, `.doc`, `.html`, or `.docx`. No other file types will be allowed.
 
-### Turning It In
 
-For your final submission, your repository must include (in addition to your code):
+### Gig Scheduler Evaluation Criteria
 
-1.  _(Updated from assignment 1)_ The EER Diagram that describes your database. This should be in the top-level directory of your repository. If you had to modify your database during development for any reason, ensure that your EER diagram is up to date.
-2.  _(Updated from assignment 1)_ The SQL dump that creates and seeds your database. This should be in the top-level directory of your repository. If you had to modify your database during development for any reason, ensure that your SQL dump is up to date.
-3.  A brief user manual explaining how to interact with your application.
-4.  Of course, the Java code that defines the behavior of your application (including code, comments, and unit tests).
+**Below is a list of criteria for which the project meets.** _The sub-bullet points are provided as examples of what to consider when completing this assignment and are not intended to be comprehensive._
 
-### Gig Scheduler Assignment 2 Evaluation Criteria
-
-**Below is a list of criteria for which the assignment will be evaluated and feedback will be given, using the E/S/N/U system.** _The sub-bullet points are provided as examples of what to consider when completing this assignment and are not intended to be comprehensive._
-
--   **Data Structures**
-    -   use of built-in data structures is appropriate for needs of system
-    -   custom data structures are functionally sound
--   **Database Integration**
-    -   accessors are well-formed according to best practices discussed in class
-    -   SQL queries are well-formed and correct
+-   **OOP Structure**
+    -   use of encapsulation & inheritance
+    -   functionality belongs to appropriate classes
+-   **Database Design**
+    -   tables use correct data types
+    -   tables utilize primary/foreign key constraints
+    -   relationships modeled appropriately
 -   **Meets spec**
+    -   SQL dump file included, named appropriately, and includes the required seeding elements.
+    -   EER diagram included and named appropriately.
+    -   Gig/Band info is formatted according to spec when outputted, and the user is prompted for a start/end date for filtering gigs by date.
+    -   Functionality for prompting the user to add new bands is completed according to spec.
+    -   Accessors include the ability to view all gigs, and includes the ability to filter these gigs between two dates/times.
+    -   Accessors include the ability to add a new gig and associated bands to the database.
     -   USER_MANUAL file included, named appropriately, and helpful.
     -   System includes helpful help menu and the ability to exit.
     -   Gig/Band info is formatted according to spec when outputted, and the user is prompted for a start/end date for filtering gigs by date.
@@ -193,6 +148,9 @@ For your final submission, your repository must include (in addition to your cod
 -   **Software engineering principles**
     -   No linter errors
     -   Well-chosen variable and method names
--   **Extra Credit Assessment:**
-    -   Enable users to edit or delete a Band (+1 Satisfactory, demonstrate via unit tests)
-    -   Enable users to edit or delete a Gig (+1 Exemplary, demonstrate via unit tests)
+-   **Data Structures**
+    -   use of built-in data structures is appropriate for needs of system
+    -   custom data structures are functionally sound
+-   **Database Integration**
+    -   accessors are well-formed according to best practices discussed in class
+    -   SQL queries are well-formed and correct

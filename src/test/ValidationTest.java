@@ -5,7 +5,6 @@ import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.unl.raikes.gigscheduler.Validation;
 import edu.unl.raikes.gigscheduler.interfaces.IBandAccessor;
 import edu.unl.raikes.gigscheduler.interfaces.IGigAccessor;
 import edu.unl.raikes.gigscheduler.interfaces.IGigBandAccessor;

@@ -1,4 +1,4 @@
-package edu.unl.raikes.gigscheduler;
+package objects;
 
 import edu.unl.raikse.gigscheduler.accessor.BandAccessor;
 import edu.unl.raikse.gigscheduler.accessor.GigAccessor;

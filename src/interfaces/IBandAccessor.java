@@ -1,6 +1,6 @@
 package edu.unl.raikes.gigscheduler.interfaces;
 
-import edu.unl.raikes.gigscheduler.Band;
+import objects.Band;
 
 /**
  * Interface for the band accessor.

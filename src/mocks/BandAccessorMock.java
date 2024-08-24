@@ -2,8 +2,8 @@ package edu.unl.raikes.gigscheduler.mocks;
 
 import java.util.ArrayList;
 
-import edu.unl.raikes.gigscheduler.Band;
 import edu.unl.raikes.gigscheduler.interfaces.IBandAccessor;
+import objects.Band;
 
 /**
  * Mock class of a band accessor for testing.

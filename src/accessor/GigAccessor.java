@@ -7,8 +7,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import edu.unl.raikes.gigscheduler.ConnectionFactory;
-import edu.unl.raikes.gigscheduler.Gig;
 import edu.unl.raikes.gigscheduler.interfaces.IGigAccessor;
+import objects.Gig;
 
 /**
  * Class to access the gig table.

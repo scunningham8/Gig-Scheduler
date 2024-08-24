@@ -1,4 +1,4 @@
-package edu.unl.raikes.gigscheduler;
+package test;
 
 import java.util.Scanner;
 

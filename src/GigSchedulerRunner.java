@@ -1,4 +1,4 @@
-package edu.unl.raikes.gigscheduler;
+
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -13,6 +13,7 @@ import edu.unl.raikes.gigscheduler.interfaces.IInput;
 import edu.unl.raikse.gigscheduler.accessor.BandAccessor;
 import edu.unl.raikse.gigscheduler.accessor.GigAccessor;
 import edu.unl.raikse.gigscheduler.accessor.GigBandAccessor;
+import objects.GigScheduler;
 
 /**
  * Main class for package.

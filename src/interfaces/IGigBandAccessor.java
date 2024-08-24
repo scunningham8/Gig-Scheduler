@@ -2,7 +2,7 @@ package edu.unl.raikes.gigscheduler.interfaces;
 
 import java.util.ArrayList;
 
-import edu.unl.raikes.gigscheduler.GigBand;
+import objects.GigBand;
 
 /**
  * Interface for the gig band accessor.

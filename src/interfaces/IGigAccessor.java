@@ -7,7 +7,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import edu.unl.raikes.gigscheduler.ConnectionFactory;
-import edu.unl.raikes.gigscheduler.Gig;
+import objects.Gig;
 
 /**
  * Interface for the gig accessor.

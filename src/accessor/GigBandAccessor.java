@@ -4,24 +4,25 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
-import edu.unl.raikes.gigscheduler.Band;
 import edu.unl.raikes.gigscheduler.ConnectionFactory;
-import edu.unl.raikes.gigscheduler.interfaces.IBandAccessor;
+import edu.unl.raikes.gigscheduler.interfaces.IGigBandAccessor;
+import objects.GigBand;
 
 /**
- * Class to access the band table.
+ * Class to access the relationship table.
  * 
  * @author sarahcunningham
  *
  */
-public class BandAccessor extends ConnectionFactory implements IBandAccessor {
+public class GigBandAccessor implements IGigBandAccessor {
 
     @Override
-    public Band getBandById(int id) {
+    public GigBand getGigBandsByID(int id) {
         Connection conn = null;
         Statement stmt = null;
-        Band band = null;
+        GigBand gigBand = null;
 
         try {
             // STEP 3: Open a connection
@@ -30,20 +31,20 @@ public class BandAccessor extends ConnectionFactory implements IBandAccessor {
             // STEP 4: Execute an insert statement
             stmt = conn.createStatement();
 
-            String insert = "SELECT * FROM bands where ID = \"" + id + "\";";
+            String insert = "SELECT * FROM gig_bands where ID = \"" + id + "\";";
+            stmt.executeUpdate(insert, Statement.RETURN_GENERATED_KEYS);
 
             // STEP 5: Process the results
-            ResultSet rs = stmt.executeQuery(insert);
+            ResultSet rs = stmt.getGeneratedKeys();
             while (rs.next()) {
 
                 // Retrieve by column name
-                String name = rs.getString("name");
-                String hometown = rs.getString("hometown");
-                String websiteLink = rs.getString("websiteLink");
-                String imageLink = rs.getString("imageLink");
+                int gigID = rs.getInt("gig_Id");
+                int bandID = rs.getInt("band_ID");
+                boolean isHeadliner = rs.getBoolean("isHeadliner");
 
                 // create character object
-                band = new Band(id, name, hometown, websiteLink, imageLink);
+                gigBand = new GigBand(id, gigID, bandID, isHeadliner);
 
             }
 
@@ -74,71 +75,11 @@ public class BandAccessor extends ConnectionFactory implements IBandAccessor {
             } // end finally try
         }
 
-        return band;
+        return gigBand;
     }
 
     @Override
-    public Band getBandByName(String name) {
-        Connection conn = null;
-        Statement stmt = null;
-        Band band = null;
-
-        try {
-            // STEP 3: Open a connection
-            conn = ConnectionFactory.getConnection();
-
-            // STEP 4: Execute an insert statement
-            stmt = conn.createStatement();
-
-            String insert = "SELECT * FROM bands where name = \"" + name + "\";";
-
-            // STEP 5: Process the results
-            ResultSet rs = stmt.executeQuery(insert);
-            while (rs.next()) {
-
-                // Retrieve by column name
-                int id = rs.getInt("ID");
-                String hometown = rs.getString("hometown");
-                String websiteLink = rs.getString("websiteLink");
-                String imageLink = rs.getString("imageLink");
-
-                // create character object
-                band = new Band(id, name, hometown, websiteLink, imageLink);
-
-            }
-
-            // STEP 6: Clean-up environment
-            rs.close();
-            stmt.close();
-            conn.close();
-        } catch (SQLException se) {
-            // Handle errors for JDBC
-            se.printStackTrace();
-        } catch (Exception e) {
-            // Handle errors for Class.forName
-            e.printStackTrace();
-        } finally {
-            // finally block used to close resources
-            try {
-                if (stmt != null) {
-                    conn.close();
-                }
-            } catch (SQLException se) {
-            } // do nothing
-            try {
-                if (conn != null) {
-                    conn.close();
-                }
-            } catch (SQLException se) {
-                se.printStackTrace();
-            } // end finally try
-        }
-
-        return band;
-    }
-
-    @Override
-    public Band saveBand(Band band) {
+    public GigBand saveGigBands(GigBand gigBand) {
         Connection conn = null;
         Statement stmt = null;
         try {
@@ -148,9 +89,8 @@ public class BandAccessor extends ConnectionFactory implements IBandAccessor {
             // STEP 4: Execute an insert statement
             stmt = conn.createStatement();
 
-            String insert = "INSERT INTO bands (name, hometown, websiteLink, imageLink) values" + "(\"" + band.getName()
-                    + "\", \"" + band.getHometown() + "\", \"" + band.getWebsiteLink() + "\", \"" + band.getImageLink()
-                    + "\")";
+            String insert = "INSERT INTO gig_bands (gig_ID, band_ID, isHeadliner) values" + "(\"" + gigBand.getGigID()
+                    + "\", \"" + gigBand.getBandID() + "\", \"" + gigBand.isHeadliner() + "\")";
             stmt.executeUpdate(insert, Statement.RETURN_GENERATED_KEYS);
 
             // STEP 5: Process the results
@@ -187,7 +127,69 @@ public class BandAccessor extends ConnectionFactory implements IBandAccessor {
             } // end finally try
         }
 
-        return band;
+        return gigBand;
+    }
+    
+    @Override
+    public ArrayList<GigBand> getGigBandsByGigID(int id) {
+        ArrayList<GigBand> allRelationships = new ArrayList<GigBand>();
+        Connection conn = null;
+        Statement stmt = null;
+        GigBand gigBand = null;
+
+        try {
+            // STEP 3: Open a connection
+            conn = ConnectionFactory.getConnection();
+
+            // STEP 4: Execute an insert statement
+            stmt = conn.createStatement();
+
+            String insert = "SELECT * FROM gig_bands where gig_ID = \"" + id + "\";";
+            //stmt.executeUpdate(insert, Statement.RETURN_GENERATED_KEYS);
+
+            // STEP 5: Process the results
+            ResultSet rs = stmt.executeQuery(insert);
+            while (rs.next()) {
+
+                // Retrieve by column name
+                int iD = rs.getInt("ID");
+                int gigID = rs.getInt("gig_Id");
+                int bandID = rs.getInt("band_iD");
+                boolean isHeadliner = rs.getBoolean("isHeadliner");
+
+                // create character object
+                gigBand = new GigBand(iD, gigID, bandID, isHeadliner);
+                allRelationships.add(gigBand);
+            }
+
+            // STEP 6: Clean-up environment
+            rs.close();
+            stmt.close();
+            conn.close();
+        } catch (SQLException se) {
+            // Handle errors for JDBC
+            se.printStackTrace();
+        } catch (Exception e) {
+            // Handle errors for Class.forName
+            e.printStackTrace();
+        } finally {
+            // finally block used to close resources
+            try {
+                if (stmt != null) {
+                    conn.close();
+                }
+            } catch (SQLException se) {
+            } // do nothing
+            try {
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException se) {
+                se.printStackTrace();
+            } // end finally try
+        }
+
+        return allRelationships;
     }
 
 }

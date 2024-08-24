@@ -2,8 +2,8 @@ package edu.unl.raikes.gigscheduler.mocks;
 
 import java.util.ArrayList;
 
-import edu.unl.raikes.gigscheduler.Gig;
 import edu.unl.raikes.gigscheduler.interfaces.IGigAccessor;
+import objects.Gig;
 
 /**
  * Mock class of a gig accessor for testing.

@@ -7,9 +7,6 @@ import java.util.List;
 
 import org.junit.Test;
 
-import edu.unl.raikes.gigscheduler.Band;
-import edu.unl.raikes.gigscheduler.Gig;
-import edu.unl.raikes.gigscheduler.GigScheduler;
 import edu.unl.raikes.gigscheduler.interfaces.IBandAccessor;
 import edu.unl.raikes.gigscheduler.interfaces.IGigAccessor;
 import edu.unl.raikes.gigscheduler.interfaces.IGigBandAccessor;
@@ -20,6 +17,9 @@ import edu.unl.raikes.gigscheduler.mocks.GigAccessorMock;
 import edu.unl.raikes.gigscheduler.mocks.GigBandAccessorMock;
 import edu.unl.raikes.gigscheduler.mocks.InputMock;
 import edu.unl.raikes.gigscheduler.mocks.OutputMock;
+import objects.Band;
+import objects.Gig;
+import objects.GigScheduler;
 
 public class GigSchedulerTest {
 
